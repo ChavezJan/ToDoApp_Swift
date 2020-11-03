@@ -40,8 +40,17 @@ class ItemViewController: UIViewController {
 
     @IBAction func doneButtonAction(_ sender: Any) {
         
+        item?.done = true
+        doneNotDoneLabel.text = "Done"
+        try! self.context.save()
+        
+    }
+    
+    @IBAction func saveActionButton(_ sender: Any) {
+        
         item?.descript = descriptionLabel.text
         try! self.context.save()
         
     }
+    
 }
